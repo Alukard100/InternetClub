@@ -9,6 +9,7 @@ namespace InternetClub.Application.DTOs.Article
 {
     public class ArticleResponse
     {
+        public Guid Id { get; set; }     
         public string Title { get; set; } = null;
         public string ThumbnailPath { get; set; } = null;
         public string Content { get; set; } = null;

@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace InternetClub.Application.DTOs.Article
 {
-    public class CreateArticleRequest
+    public class EditArticleRequest
     {
+        public Guid Id { get; set; }
         public string Title { get; set; } = null;
         public string ThumbnailPath { get; set; } = null;
         public string Content { get; set; } = null;
