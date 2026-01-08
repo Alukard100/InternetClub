@@ -1,0 +1,18 @@
+﻿using InternetClub.Domain.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InternetClub.Application.DTOs.Article
+{
+    public class ArticleResponse
+    {
+        public string Title { get; set; } = null;
+        public string ThumbnailPath { get; set; } = null;
+        public string Content { get; set; } = null;
+        public ArticleType Type { get; set; } = ArticleType.Information;
+        public DateTime CreatedAt { get; set; } = DateTime.MinValue;
+    }
+}

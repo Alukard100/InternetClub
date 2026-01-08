@@ -1,0 +1,174 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\InternetClub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|d:\\projects\\internetclub\\internetclub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|solutionrelative:internetclub.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|d:\\projects\\internetclub\\internetclub.domain\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|solutionrelative:internetclub.domain\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|d:\\projects\\internetclub\\internetclub.domain\\entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|solutionrelative:internetclub.domain\\entities\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|d:\\projects\\internetclub\\internetclub.domain\\entities\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|solutionrelative:internetclub.domain\\entities\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|d:\\projects\\internetclub\\internetclub.domain\\enums\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|solutionrelative:internetclub.domain\\enums\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|d:\\projects\\internetclub\\internetclub.domain\\enums\\articletype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|solutionrelative:internetclub.domain\\enums\\articletype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|d:\\projects\\internetclub\\internetclub.domain\\enums\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35367918-C791-4338-8D0A-D2D74B3B9DB2}|InternetClub.Domain\\InternetClub.Domain.csproj|solutionrelative:internetclub.domain\\enums\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9377AFA4-1528-4BDB-84A8-925C2AD0D062}|InternetClub\\InternetClub.csproj|d:\\projects\\internetclub\\internetclub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9377AFA4-1528-4BDB-84A8-925C2AD0D062}|InternetClub\\InternetClub.csproj|solutionrelative:internetclub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Enums\\UserRole.cs",
+              "RelativeDocumentMoniker": "InternetClub.Domain\\Enums\\UserRole.cs",
+              "ToolTip": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Enums\\UserRole.cs",
+              "RelativeToolTip": "InternetClub.Domain\\Enums\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T17:21:24.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TransactionType.cs",
+              "DocumentMoniker": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Enums\\TransactionType.cs",
+              "RelativeDocumentMoniker": "InternetClub.Domain\\Enums\\TransactionType.cs",
+              "ToolTip": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Enums\\TransactionType.cs",
+              "RelativeToolTip": "InternetClub.Domain\\Enums\\TransactionType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T23:42:35.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Entities\\Transaction.cs",
+              "RelativeDocumentMoniker": "InternetClub.Domain\\Entities\\Transaction.cs",
+              "ToolTip": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Entities\\Transaction.cs",
+              "RelativeToolTip": "InternetClub.Domain\\Entities\\Transaction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T23:40:59.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ArticleType.cs",
+              "DocumentMoniker": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Enums\\ArticleType.cs",
+              "RelativeDocumentMoniker": "InternetClub.Domain\\Enums\\ArticleType.cs",
+              "ToolTip": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Enums\\ArticleType.cs",
+              "RelativeToolTip": "InternetClub.Domain\\Enums\\ArticleType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T13:32:22.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Status.cs",
+              "DocumentMoniker": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Enums\\Status.cs",
+              "RelativeDocumentMoniker": "InternetClub.Domain\\Enums\\Status.cs",
+              "ToolTip": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Enums\\Status.cs",
+              "RelativeToolTip": "InternetClub.Domain\\Enums\\Status.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T18:33:35.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "InternetClub.Domain\\Entities\\User.cs",
+              "ToolTip": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "InternetClub.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T18:31:00.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Article.cs",
+              "DocumentMoniker": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Entities\\Article.cs",
+              "RelativeDocumentMoniker": "InternetClub.Domain\\Entities\\Article.cs",
+              "ToolTip": "D:\\Projects\\InternetClub\\InternetClub.Domain\\Entities\\Article.cs",
+              "RelativeToolTip": "InternetClub.Domain\\Entities\\Article.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T13:21:52.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\InternetClub\\InternetClub\\Program.cs",
+              "RelativeDocumentMoniker": "InternetClub\\Program.cs",
+              "ToolTip": "D:\\Projects\\InternetClub\\InternetClub\\Program.cs",
+              "RelativeToolTip": "InternetClub\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-04T15:11:19.97Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
