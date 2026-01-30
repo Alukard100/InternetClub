@@ -1,0 +1,83 @@
+.top-section {
+    display: flex;
+    width: 100%;
+    min-height: 5px;
+    justify-content: space-between;
+}
+
+.search-field {
+    width: 260px;
+}
+
+.bottom-section {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.time-pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.actions-header,
+.actions-cell {
+  text-align: right;
+}
+
+
+.actions-header {
+  padding-right: 35px;
+}
+
+.right-cell {
+  text-align: center;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px; /* space between icons */
+}
+
+.mat-mdc-header-row {
+  background-color: #E3EBFB;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9e9e9e; /* grey */
+}
+
+.status-dot.active {
+  background: #28A745; /* green */
+}
+
+.time-pill.green {
+  background-color: #28A745;
+  color: #FFFFFF;
+}
+
+.time-pill.red {
+  background-color: #DC3545;
+  color: #FFFFFF;
+}
+
+.time-pill.grey {
+  background-color: #757575;
+}
+
+.mat-mdc-cell {
+  height: 52px;             /* fixed height to unify all rows */
+  vertical-align: middle;   /* center content vertically */
+}

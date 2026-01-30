@@ -1,4 +1,5 @@
-﻿using InternetClub.Application.Interfaces.Services;
+﻿using InternetClub.Application.Interfaces.Abstraction;
+using InternetClub.Application.Interfaces.Services;
 using InternetClub.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -14,6 +15,8 @@ namespace InternetClub.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPasswordHasher, PasswordHasher>();
             
             return services;
         }

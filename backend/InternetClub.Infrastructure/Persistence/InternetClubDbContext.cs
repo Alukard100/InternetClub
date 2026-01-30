@@ -13,6 +13,18 @@ namespace InternetClub.Infrastructure.Persistence
         public InternetClubDbContext(DbContextOptions<InternetClubDbContext> options) : base(options) { }
 
         public DbSet<Article> Articles => Set<Article>();
-        
+        public DbSet<User> Users => Set<User>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(u => u.TotalMoneySpent)
+                      .HasPrecision(18, 2);
+            });
+        }
+
     }
 }

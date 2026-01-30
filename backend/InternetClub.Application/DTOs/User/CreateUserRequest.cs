@@ -9,6 +9,6 @@ namespace InternetClub.Application.DTOs.User
     public class CreateUserRequest
     {
         public string Username { get; set; } = null;
-        public string passwordHash { get; set; } = null;
+        public string Password { get; set; } = null;
     }
 }

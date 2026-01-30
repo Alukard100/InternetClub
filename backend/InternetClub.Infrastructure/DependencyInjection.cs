@@ -19,9 +19,10 @@ namespace InternetClub.Infrastructure
             IConfiguration configuration)
         {
             services.AddDbContext<InternetClubDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("InternetClub.Infrastructure")));
 
             services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }

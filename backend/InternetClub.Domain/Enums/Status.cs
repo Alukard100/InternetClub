@@ -8,8 +8,8 @@ namespace InternetClub.Domain.Enums
 {
     public enum Status
     {
-        Offline = 0,
-        Online = 1,
+        Online = 0,
+        Offline = 1,
         Deleted = 2
     }
 }

@@ -1,0 +1,66 @@
+<h2 mat-dialog-title>Add new user</h2>
+
+<form #form="ngForm" (ngSubmit)="createUser()">
+  <mat-dialog-content>
+
+    <div class="dialog-body">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput name="username" [(ngModel)]="username" required/>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput name="password" [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password" required/>
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hidePassword = !hidePassword">
+          <mat-icon>
+            {{ hidePassword ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Repeat password</mat-label>
+        <input
+          matInput
+          name="repeatPassword"
+          [type]="hideRepeatPassword ? 'password' : 'text'"
+          [(ngModel)]="repeatPassword"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hideRepeatPassword = !hideRepeatPassword">
+          <mat-icon>
+            {{ hideRepeatPassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
+        </button>
+
+        <mat-error *ngIf="password !== repeatPassword && repeatPassword">
+          Passwords do not match
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid || password !== repeatPassword">
+      Create
+    </button>
+  </mat-dialog-actions>
+</form>
