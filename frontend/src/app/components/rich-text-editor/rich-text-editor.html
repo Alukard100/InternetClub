@@ -1,0 +1,103 @@
+<div class="editor-container" [class.preview-collapsed]="!isPreviewExpanded">
+    <div class="editable">
+        <div class="toolbar">
+            <div class="style-tools">
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().toggleBold().run()" [disabled]="!editor.can().chain().focus().toggleBold().run()" [class.active]="editor.isActive('bold')">
+                    <mat-icon>format_bold</mat-icon>
+                    <span class="button-description">Bold</span> 
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().toggleItalic().run()" [disabled]="!editor.can().chain().focus().toggleItalic().run()" [class.active]="editor.isActive('italic')">
+                    <mat-icon>format_italic</mat-icon>
+                    <span class="button-description">Italic</span>
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().toggleStrike().run()" [disabled]="!editor.can().chain().focus().toggleStrike().run()" [class.active]="editor.isActive('strike')">
+                    <mat-icon>strikethrough_s</mat-icon>
+                    <span class="button-description">Strike</span>
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().toggleUnderline().run()" [disabled]="!editor.can().chain().focus().toggleUnderline().run()" [class.active]="editor.isActive('underline')">
+                    <mat-icon>format_underlined</mat-icon>
+                    <span class="button-description">Underline</span>
+                </button>
+                <button mat-raised-button (click)="editor.chain().focus().toggleCode().run()" [disabled]="!editor.can().chain().focus().toggleCode().run()" [class.active]="editor.isActive('code')">
+                    Code
+                </button>
+                <button mat-raised-button (click)="editor.chain().focus().toggleBulletList().run()" [disabled]="!editor.can().chain().focus().toggleBulletList().run()" [class.active]="editor.isActive('bullet')">
+                    Bullet list
+                </button>
+                <button mat-raised-button (click)="editor.chain().focus().toggleOrderedList().run()" [disabled]="!editor.can().chain().focus().toggleOrderedList().run()" [class.active]="editor.isActive('ordered')">
+                    Ordered list
+                </button>
+                <button mat-raised-button (click)="editor.chain().focus().toggleCodeBlock().run()" [disabled]="!editor.can().chain().focus().toggleCodeBlock().run()" [class.active]="editor.isActive('codeBlock')">
+                    Code block
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().toggleHeading({ level: 1 }).run()" [disabled]="!editor.can().chain().focus().toggleHeading({ level: 1 }).run()" [class.active]="editor.isActive('heading', { level : 1 })">
+                    H1
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().toggleHeading({ level: 2 }).run()" [disabled]="!editor.can().chain().focus().toggleHeading({ level: 2 }).run()" [class.active]="editor.isActive('heading', { level : 2 })">
+                    H2
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().toggleHeading({ level: 3 }).run()" [disabled]="!editor.can().chain().focus().toggleHeading({ level: 3 }).run()" [class.active]="editor.isActive('heading', { level : 3 })">
+                    H3
+                </button>
+                <button mat-raised-button (click)="editor.chain().focus().setHorizontalRule().run()">Horizontal rule</button>
+                <button mat-raised-button (click)="editor.chain().focus().setHardBreak().run()">Hard break</button>
+            
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().setTextAlign('left').run()" [class.active]="editor.isActive({ textAlign: 'left' })" [disabled]="!editor.can().chain().focus().setTextAlign('left').run()">
+                    <mat-icon>format_align_left</mat-icon>
+                    <span class="button-description">Left</span>
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().setTextAlign('center').run()" [class.active]="editor.isActive({ textAlign: 'center' })" [disabled]="!editor.can().chain().focus().setTextAlign('center').run()">
+                    <mat-icon>format_align_center</mat-icon>
+                    <span class="button-description">Center</span>
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().setTextAlign('right').run()" [class.active]="editor.isActive({ textAlign: 'right' })" [disabled]="!editor.can().chain().focus().setTextAlign('right').run()">
+                    <mat-icon>format_align_right</mat-icon>
+                    <span class="button-description">Right</span>
+                </button>
+                <button mat-raised-button class="short-w" (click)="insertUploadBox()">
+                    <mat-icon>
+                        image_inset
+                    </mat-icon>
+                    <span class="button-description">Upload Image</span>
+                </button>
+                <button mat-raised-button class="short-w" (click)="setImageAlign('left')" [disabled]="!editor.isActive('customImage')" [class.active]="editor.isActive('customImage', { align: 'left' })">
+                    Image Left
+                </button>
+                <button mat-raised-button class="short-w" (click)="setImageAlign('center')" [disabled]="!editor.isActive('customImage')" [class.active]="editor.isActive('customImage', { align: 'center' })">
+                    Image Center
+                </button>
+                <button mat-raised-button class="short-w" (click)="setImageAlign('right')" [disabled]="!editor.isActive('customImage')" [class.active]="editor.isActive('customImage', { align: 'right' })">
+                    Image Right
+                </button>
+            </div>
+
+            <div class="action-tools">
+                 <button mat-raised-button class="short-w" (click)="editor.chain().focus().undo().run()" [disabled]="!editor.can().chain().focus().undo().run()">
+                    <mat-icon>undo</mat-icon>
+                    <span class="button-description">Undo</span>
+                </button>
+                <button mat-raised-button class="short-w" (click)="editor.chain().focus().redo().run()" [disabled]="!editor.can().chain().focus().redo().run()">
+                    <mat-icon>redo</mat-icon>
+                    <span class="button-description">Redo</span>
+                </button>
+            </div>
+            
+            
+            
+        </div>
+
+        <div #editorElement class="editor"></div>
+    </div> 
+
+    <div class="preview-wrapper">
+        <button class="toggle-btn" (click)="togglePreview()">
+            <mat-icon>{{ isPreviewExpanded ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+
+        </button>
+
+        <div [innerHTML]="safeHtml" class="tiptap previewer"></div>
+
+    </div>
+
+</div>
+

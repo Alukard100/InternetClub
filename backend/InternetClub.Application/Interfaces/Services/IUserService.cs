@@ -12,5 +12,10 @@ namespace InternetClub.Application.Interfaces.Services
     {
         Task<UserResponse> RegisterAsync(CreateUserRequest request);
         Task<PagedResult<UserTableResponse>> ListUsersAsync(string? usernameFilter, PagingParameters paging);
+        Task<bool> StartTimerAsync(Guid userId);
+        Task<bool> StopTimerAsync(Guid userId);
+        Task UserTransactionUpdateAsync(UserTransactionUpdateRequest request);
+        Task<string> Login(LoginRequest request);
+        Task<UserGetResponse> GetUserAsync(string username);
     }
 }

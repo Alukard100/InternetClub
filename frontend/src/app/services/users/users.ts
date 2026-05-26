@@ -18,8 +18,23 @@ export class UsersService {
   }
 
   registerUser(user: { username: string; password: string }) {
-    return this.http.post('/api/User', user);
+    return this.http.post('/api/User/register', user);
   }
 
+  activateUser(id: string) {
+    return this.http.patch(`/api/User/start/${id}`, {});
+  }
+
+  deactivateUser(id: string) {
+    return this.http.patch(`/api/User/stop/${id}`, {});
+  }
+
+  login(user: { username: string; password: string }) {
+    return this.http.post('/api/User/login', user);
+  }
+
+  getMe() {
+    return this.http.get<User>('/api/User/me');
+  }
 
 }

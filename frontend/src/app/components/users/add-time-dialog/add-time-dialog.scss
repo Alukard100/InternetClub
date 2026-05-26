@@ -1,0 +1,25 @@
+h2 {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.time-pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.time-pill.green {
+  background-color: #28A745;
+  color: #FFFFFF;
+}
+
+.time-pill.red {
+  background-color: #DC3545;
+  color: #FFFFFF;
+}
+
+.time-pill.grey {
+  background-color: #757575;
+}

@@ -35,8 +35,17 @@ namespace InternetClub.Infrastructure.Repositories
 
         }
 
+        public async Task<decimal> CountTransactionAsync(Guid id)
+            => await _db.Transactions.Where(t => t.UserId == id).SumAsync(t => t.Amount);
+
         public async Task<bool> ExistsByUsernameAsync(string username)
             =>   await _db.Users.AnyAsync(u => u.Username == username);
+
+        public async Task<User> GetUserByIdAsync(Guid id)
+            => await _db.Users.FirstOrDefaultAsync(u => u.Id == id);
+
+        public async Task<User> GetUserByUsernameAsync(string username)
+            => await _db.Users.FirstOrDefaultAsync(u => u.Username == username);
 
         public async Task<List<User>> GetUsersAsync(string? usernameFilter, int skip, int take)
         {
@@ -51,5 +60,8 @@ namespace InternetClub.Infrastructure.Repositories
                 .Take(take)
                 .ToListAsync();
         }
+
+        public async Task SaveChangesAsync()
+            => await _db.SaveChangesAsync();
     }
 }

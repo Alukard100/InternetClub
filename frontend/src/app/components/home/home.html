@@ -1,0 +1,99 @@
+
+
+@if (user; as currentUser) {
+    @if (currentUser.availableSeconds | userTime:currentUser.status === 0:currentUser.expiresAt:now:true; as time) {
+        <div class="user-time mat-elevation-z2" [ngClass]="time.color">
+            <div class="top">
+                <div class="text">
+                    <span class="label">
+                        <mat-icon>schedule</mat-icon>
+                        <span>Available Time</span>
+                    </span>
+
+                    <span class="time-pill" [ngClass]="time.color">
+                        {{ time.text }}
+                    </span>
+
+                </div>
+            </div>
+            <div class="bottom">
+                <button mat-flat-button (click)="AddFunds()">
+                    <mat-icon>
+                        add
+                    </mat-icon>
+                    Add Time
+                </button>
+            </div>        
+        </div>
+    }
+}
+    
+
+
+
+<div class="god">
+
+    <div class="filters">
+        @if (totalCount > 0) {
+            <span>News: </span>
+        }
+        @else if (totalCount <= 0) {
+            <span>There are no articles</span>
+        }
+        <mat-form-field appearance="outline">
+            <mat-label>Filter by type</mat-label>
+            <mat-select [(value)]="typeFilter" (selectionChange)="onTypeFilterChange()">
+                
+                @for (type of articleTypes; track type.label) {
+                    <mat-option [value]="type.value">{{ type.label }}</mat-option>
+                }
+
+            </mat-select>
+
+        </mat-form-field>
+    </div>
+
+    <div class="article-grid">
+        @for (article of articles; track article) {
+            <app-article-card
+                [article]="article">
+            </app-article-card>
+        }
+    </div>
+
+    <div class="pagination">
+        <button mat-button
+                (click)="firstPage()"
+                [disabled]="pageNumber === 1">
+            <mat-icon>keyboard_double_arrow_left</mat-icon>
+        </button>
+
+        <button mat-button
+                (click)="previousPage()"
+                [disabled]="pageNumber === 1">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+
+        @for (page of pages; track page) {
+            <button mat-button
+                    [class.active]="pageNumber === page"
+                    (click)="goToPage(page)"
+                    [disabled]="pageNumber === page">
+                {{ page }}
+            </button>
+        }
+
+        <button mat-button
+                (click)="nextPage()"
+                [disabled]="pageNumber === totalPages">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+
+        <button mat-button
+                (click)="lastPage()"
+                [disabled]="pageNumber === totalPages">
+            <mat-icon>keyboard_double_arrow_right</mat-icon>
+        </button>
+    </div>
+
+</div>

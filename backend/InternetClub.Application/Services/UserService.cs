@@ -16,10 +16,12 @@ namespace InternetClub.Application.Services
     {
         private readonly IUserRepository _repo;
         private readonly IPasswordHasher _hasher;
-        public UserService(IUserRepository repo, IPasswordHasher hasher) 
+        private readonly IJwtService _jwtService;
+        public UserService(IUserRepository repo, IPasswordHasher hasher, IJwtService jwtService) 
         {
             _repo = repo;
             _hasher = hasher;
+            _jwtService = jwtService;
         }
 
         public async Task<PagedResult<UserTableResponse>> ListUsersAsync(string? usernameFilter, PagingParameters paging)
@@ -36,7 +38,8 @@ namespace InternetClub.Application.Services
                 Username = u.Username,
                 TotalMoneySpent = u.TotalMoneySpent,
                 Status = u.Status,
-                AvailableMinutes = u.AvailableMinutes
+                AvailableSeconds = u.AvailableSeconds,
+                ExpiresAt = u.ExpiresAt
             }).ToList();
 
             return new PagedResult<UserTableResponse>
@@ -64,8 +67,79 @@ namespace InternetClub.Application.Services
                 Id = user.Id,
                 Username = user.Username,
                 UserRole = user.Role,
-                AvailableMinutes = user.AvailableMinutes,
+                AvailableSeconds = user.AvailableSeconds,
                 CreatedAt = user.CreatedAt
+            };
+        }
+
+        public async Task<bool> StartTimerAsync(Guid userId)
+        {
+            var user = await _repo.GetUserByIdAsync(userId);
+
+            if (user == null)
+                return false;
+
+            user.Activate();
+
+            await _repo.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> StopTimerAsync(Guid userId)
+        {
+            var user = await _repo.GetUserByIdAsync(userId);
+
+            if (user == null)
+                return false;
+            
+            user.Deactivate();
+
+            await _repo.SaveChangesAsync();
+            return true;
+
+        }
+
+        public async Task UserTransactionUpdateAsync(UserTransactionUpdateRequest request)
+        {
+            var user = await _repo.GetUserByIdAsync(request.UserId);
+
+            int increase = (int)request.Amount * 600;
+
+            decimal totalSpent = await _repo.CountTransactionAsync(user.Id);
+
+            user.UpdateAmount(increase, totalSpent);
+
+            await _repo.SaveChangesAsync();
+        }
+
+        public async Task<string> Login(LoginRequest request)
+        {
+            var user = await _repo.GetUserByUsernameAsync(request.Username);
+
+            if (user == null || !_hasher.Verify(request.Password, user.PasswordHash))
+                return null;
+
+            var token = _jwtService.GenerateToken(user);
+
+            return token;
+        }
+
+        public async Task<UserGetResponse> GetUserAsync(string username)
+        {
+            var user = await _repo.GetUserByUsernameAsync(username);
+
+            if (user == null)
+                return null;
+
+            return new UserGetResponse
+            {
+                Id = user.Id,
+                Username = user.Username,
+                UserRole = user.Role,
+                AvailableSeconds = user.AvailableSeconds,
+                ExpiresAt = user.ExpiresAt,
+                Status = user.Status,
+                TotalMoneySpent = user.TotalMoneySpent
             };
         }
     }

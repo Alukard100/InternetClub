@@ -43,4 +43,8 @@ export class AddUserDialog {
       error: err => console.error(err)
     });
   }
+
+  closeDio() {
+    this.dialogRef.close();
+  }
 }

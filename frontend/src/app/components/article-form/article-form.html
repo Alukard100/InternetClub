@@ -1,0 +1,96 @@
+<div class="back" (click)="returnBack()">
+  <mat-icon>arrow_back</mat-icon>
+  <span>Back</span>
+</div>
+
+<input type="file" #file class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+<div class="article-form">
+    <mat-form-field appearance="outline" class="dense-3">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="article.title">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="dense-3">
+        <mat-label>Type</mat-label>
+        <mat-select matNativeControl [(ngModel)]="article.type">
+            <mat-option [value]="0">Games</mat-option>
+            <mat-option [value]="1">Information</mat-option>
+            <mat-option [value]="2">Tournaments</mat-option>
+
+        </mat-select>
+
+    </mat-form-field>
+
+
+    <div class="content-editor" [class.isImgExpanded]="!isImgExpanded">
+
+      <!-- Cropper -->
+      @if (imageChangedEvent) {
+        <div class="image-container cropper-wrapper">
+          <image-cropper
+            class="image-container"
+            [imageFile]="newFile"
+            [maintainAspectRatio]="true"
+            [aspectRatio]="21 / 9"
+            [resizeToWidth]="800"
+            format="png"
+
+            [autoCrop]="false"
+            
+            (imageCropped)="onImageCropped($event)">
+          </image-cropper>
+      
+          <!-- Cancel Button -->
+          <button mat-fab color="warn" class="cancel-btn" (click)="onCancel()">
+            <mat-icon>close</mat-icon>
+          </button>
+
+        </div>  
+      }
+
+      <!-- Dropzone -->
+      @if (!imageChangedEvent &&newThumbnail == '') {
+        <div class="dropzone image-container"
+              (click)="fileUpload.click()"
+              (dragover)="onDragOver($event)"
+              (dragleave)="onDragLeave($event)"
+              (drop)="onDrop($event)"
+              [class.dragging]="isDragging">
+
+              <span>Drop your new thumbnail here or select it!</span> 
+
+              <button mat-mini-fab color="primary" class="upload-button">
+                <mat-icon>attach_file</mat-icon>
+              </button>
+        </div>
+      }
+
+      <!-- Existing Image -->
+      @if (article.thumbnailPath !== '') {
+        <div class="image-container">
+          <img mat-card-image [src]="imagePath + article.thumbnailPath" (load)="onImageLoaded()" alt="Video thumbnail">
+        </div>
+      }
+    </div>
+
+    <button class="toggl-btn" (click)="toggleImageSection()">
+      <mat-icon>{{ isImgExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
+    </button>
+
+    <app-rich-text-editor
+      [(content)]="article.content">
+    
+    </app-rich-text-editor>
+
+    <div class="bottom-section">
+      <mat-slide-toggle [(ngModel)]="article.published"> Published </mat-slide-toggle>
+      <button mat-flat-button color="accent" (click)="onSubmit()">
+        <mat-icon matPrefix>save</mat-icon>
+        Save
+      </button>
+    </div>
+
+
+
+</div>

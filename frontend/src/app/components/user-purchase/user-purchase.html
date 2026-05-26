@@ -1,0 +1,30 @@
+<button matButton="outlined" class="backback" (click)="back()">
+    <mat-icon>arrow_back</mat-icon>
+</button>
+
+<div class="container">
+    @if (data) {
+        <div class="amount-interface">
+            @if (data.availableSeconds | userTime:isActive(data.status):data.expiresAt:now; as time) {
+                <span class="time-pill">
+                    {{ time.text }}
+                </span>
+            }
+
+            <mat-form-field>
+                <mat-label>Amount (KM)</mat-label>
+                <input matInput type="number" min="0" step="6" [(ngModel)]="amount" (change)="updateSeconds()">
+            </mat-form-field>
+
+            @if (updateAmountTemp | userTime:false:null:now; as time) {
+                <span class="time-pill"> {{ time.text }} </span>
+            } 
+
+        </div>
+    }
+    
+    
+    <div id="paypal-button-container" class="paypal"></div>
+
+</div>
+

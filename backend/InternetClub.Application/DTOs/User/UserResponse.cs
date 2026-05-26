@@ -13,6 +13,6 @@ namespace InternetClub.Application.DTOs.User
         public string Username { get; set; }
         public UserRole UserRole { get; set; }
         public DateTime CreatedAt { get; set; }
-        public int AvailableMinutes { get; set; }
+        public int AvailableSeconds { get; set; }
     }
 }

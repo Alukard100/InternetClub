@@ -17,3 +17,25 @@ h2 {
 mat-form-field {
   width: 240px;
 }
+
+.close-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+
+  color: #7a7a7a;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    color: #444;
+  }
+
+  &:active {
+    transform: scale(0.92);
+  }
+}

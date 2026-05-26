@@ -13,6 +13,7 @@ namespace InternetClub.Application.DTOs.User
         public string Username { get; set; }
         public decimal TotalMoneySpent { get; set; }
         public  Status Status { get; set; }
-        public int AvailableMinutes { get; set; }
+        public int AvailableSeconds { get; set; }
+        public DateTimeOffset? ExpiresAt { get; set; }
     }
 }

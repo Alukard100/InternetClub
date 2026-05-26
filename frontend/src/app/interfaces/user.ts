@@ -1,7 +1,13 @@
 export interface User {
-    userId: number;
+    id: string;
     username: string;
-    total: number;
-    status: 'Active' | 'Inactive';
-    time: string;
+    totalMoneySpent: number;
+    status: number;
+    availableSeconds: number;
+    expiresAt?: Date;
+}
+
+export enum UserRole {
+    User = 0,
+    Admin = 1
 }

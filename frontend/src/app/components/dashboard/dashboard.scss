@@ -1,0 +1,79 @@
+.upper-section {
+    width: 92%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 4%;
+
+}
+
+.bottom-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    min-width: 15vw;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 8px 8px 8px 0;
+}
+
+.card mat-icon {
+    width: auto;
+    font-size: 36px;
+    height: auto;
+    margin: auto;
+    color: #8540F5;
+}
+
+.card div {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h3 {
+        margin-bottom: 2px;
+    }
+}
+
+//chart styles
+
+.bottom-section {
+  width: 92%;
+  margin: 20px auto;
+  display: flex;
+  gap: 20px;
+}
+
+.chart-large {
+  flex: 2;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+
+}
+
+.chart-small {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.chart-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.active-btn {
+  background-color: #8540F5 !important;
+  color: white !important;
+  border-radius: 8px;
+}

@@ -13,5 +13,9 @@ namespace InternetClub.Application.Interfaces.Repositories
         Task<bool> ExistsByUsernameAsync(string username);
         Task<int> CountAsync(string? usernameFilter);
         Task<List<User>> GetUsersAsync(string? usernameFilter, int skip, int take);
+        Task<User> GetUserByIdAsync(Guid id);
+        Task<User> GetUserByUsernameAsync(string username);
+        Task<decimal> CountTransactionAsync(Guid id);
+        Task SaveChangesAsync();
     }
 }

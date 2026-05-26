@@ -1,0 +1,36 @@
+.top-section {
+    display: flex;
+    width: 100%;
+    min-height: 5px;
+    justify-content: space-between;
+}
+
+.search-field {
+    width: 260px;
+}
+
+.bottom-section {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.actions-header {
+  text-align: right;
+  padding-right: 35px;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px; /* space between icons */
+}
+
+.mat-mdc-header-row {
+  background-color: #E3EBFB;
+}
+
+.mat-mdc-cell {
+  height: 52px;             /* fixed height to unify all rows */
+  vertical-align: middle;   /* center content vertically */
+}

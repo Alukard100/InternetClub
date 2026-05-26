@@ -1,0 +1,118 @@
+.toolbar {
+    margin-bottom: 5px;
+    display: inline-flex;
+}
+
+button {
+    border-radius: 0;
+    color: #8540F5 !important;
+
+    transition: all 0.2 ease;
+}
+
+.active {
+    color: #eae3ff !important;
+    background-color: #8540F5 !important;
+
+    transition: all 0.2 ease;
+}
+
+.short-w {
+    min-width: 0px;
+    position: relative;
+
+    .button-description {
+        /* Initially hide the description */
+        opacity: 0;
+        pointer-events: none;
+        /* Optional styling for the description box */
+        background-color: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        position: absolute;
+        top: 100%;            
+        left: 50%;              
+        transform: translate(-60%, 70%); // center + small gap
+        white-space: nowrap;
+        z-index: 10;
+
+        /* Add a smooth transition for the display/opacity change (optional) */
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /* When the container is hovered, show the description */
+    &:hover .button-description {
+        opacity: 1;
+    }
+}
+
+.mat-mdc-raised-button {
+    padding: 0 var(--mat-button-protected-horizontal-padding, 8px);
+}
+
+.mat-icon {
+    margin: 0 !important;
+}
+
+.editor-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 100%;
+}
+
+.style-tools {
+    width: calc(100% - 68px);
+}
+.action-tools {
+    width: 68px;
+}
+
+.editable {
+    flex: 1;
+    transition: all 0.3s ease;
+    min-width: 0;
+}
+
+.preview-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.previewer {
+    flex: 1;
+    overflow-y: auto;
+    background: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #8540F5 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+.preview-collapsed {
+    .preview-wrapper {
+        width: 20px; /* only the button visible */
+        transition: width 0.3s ease;
+    }
+
+    .previewer {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+    }
+}

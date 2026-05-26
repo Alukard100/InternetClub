@@ -1,0 +1,144 @@
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+    padding-top: 0;
+}
+
+@media (min-width: 768px) {
+    .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.filters {
+
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    margin: 1rem 1rem 0 1rem;
+
+    span {
+        color: #1d1b1e;
+        font-size: 2rem;
+        font-weight: 600;
+        align-self: center;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+    button.active {
+        background: #8540F5;
+        color: white;
+    }
+}
+
+.god {
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .god {
+        width: 100vw;
+        
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+
+        border-radius: 0px;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+//time section
+
+.user-time {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -24px;
+    margin-bottom: 2rem;
+    padding: 1.2rem 1.5rem;
+    background: #1e1e1e;
+
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        mat-icon {
+            width: 42px;
+            height: 42px;
+            font-size: 42px;
+            color: #ffffffb3;
+        }
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: .35rem;
+        align-items: center;
+    }
+
+    .label {
+        font-size: 1.2rem;
+        color: rgba(255,255,255,.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .bottom {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top, .bottom {
+        padding-right: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .user-time {
+        margin-bottom: 0;
+    }
+}
+
+.time-pill {
+    width: fit-content;
+    padding: .35rem .8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1.95rem;
+    color: white;
+}
+
+.green {
+    background-color: #E0CFFC;
+}
+
+.red {
+    background-color: #DC3545;
+}
+
+.grey {
+    background-color: #DC3545;
+}

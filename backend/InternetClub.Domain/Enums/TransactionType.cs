@@ -9,6 +9,7 @@ namespace InternetClub.Domain.Enums
     public enum TransactionType
     {
         Online = 0,
-        Offline = 1
+        Offline = 1,
+        Invalid = 2
     }
 }

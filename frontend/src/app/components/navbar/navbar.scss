@@ -12,6 +12,14 @@
   gap: 16px;
 }
 
+.navbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
 .logo {
   width: 42px;
   height: 42px;
@@ -24,6 +32,7 @@
   font-weight: 600;
   font-size: 20px;
   margin-right: 16px;
+  cursor: pointer;
 }
 
 a {
@@ -35,6 +44,31 @@ a {
   transition: all 0.2s ease;
 }
 
+.accent {
+  background-color: #b0f441;
+  color: #333;
+  cursor: pointer;
+  border: #333 solid 1px;
+}
+
+.primary {
+  background-color: transparent;
+  color: #eae3ff;
+  border: #eae3ff solid 1px;
+  cursor: pointer;
+}
+
+.warn {
+  background-color: #DC3545;
+  color: #333;
+  border: #333 solid 1px;
+  cursor: pointer;
+}
+
+.accent:hover .primary:hover{
+  border-color: white;
+}
+
 a:hover {
   background: white;
   color: #8540F5;
@@ -44,4 +78,8 @@ a:hover {
 a.active {
   background: white;
   color: #8540F5;
+}
+
+.adding {
+  height: 24px;
 }

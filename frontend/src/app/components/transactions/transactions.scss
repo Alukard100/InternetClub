@@ -1,0 +1,58 @@
+.top-section {
+    display: flex;
+    width: 100%;
+    min-height: 5px;
+    justify-content: flex-start;
+    gap: 10px;
+    height: 60px;
+}
+
+.search-field {
+    width: 260px;
+}
+
+.select-field {
+    align-self: center;
+    height: 68px;
+}
+
+.date-field {
+    align-self: center;
+    height: 68px;
+}
+
+.bottom-section {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mat-mdc-header-row {
+  background-color: #E3EBFB;
+}
+
+.mat-mdc-cell {
+  height: 52px;             /* fixed height to unify all rows */
+  vertical-align: middle;   /* center content vertically */
+}
+
+::ng-deep .mat-datepicker-content-container {
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
+
+.quick-actions button {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 30px 0;
+}
+
+.spacer {
+  flex: 1;
+}

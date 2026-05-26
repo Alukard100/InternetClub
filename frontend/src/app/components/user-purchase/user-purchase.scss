@@ -1,0 +1,60 @@
+.time-pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.time-pill.green {
+  background-color: #28A745;
+  color: #FFFFFF;
+}
+
+.time-pill.red {
+  background-color: #DC3545;
+  color: #FFFFFF;
+}
+
+.time-pill.grey {
+  background-color: #757575;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.amount-interface {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paypal {
+    min-width: 333px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backback {
+    opacity: 0.7;
+    width: 44px;
+    height: 44px;
+    min-width: 38px !important;
+    padding: 0px !important;
+    border-radius: 5px !important;
+    mat-icon {
+        margin: 0 !important;
+    }
+
+    position: fixed;
+    z-index: 1000;
+}
+
+
+

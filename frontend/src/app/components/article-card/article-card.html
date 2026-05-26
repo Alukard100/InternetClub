@@ -1,0 +1,6 @@
+<mat-card class="article-card" (click)="navigateToArticle()">
+    <div class="main-container">
+        <img [src]="imagePath + normalizePath(article.thumbnailPath)" alt="Image" class="thumbnail">
+        <div class="article-title">{{ article.title }}</div>
+    </div>
+</mat-card>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace InternetClub.Application.DTOs.Article
@@ -13,5 +14,6 @@ namespace InternetClub.Application.DTOs.Article
         public string ThumbnailPath { get; set; } = null;
         public string Content { get; set; } = null;
         public ArticleType Type { get; set; }
+        public bool Published { get; set; }
     }
 }

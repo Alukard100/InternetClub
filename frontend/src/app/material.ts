@@ -9,6 +9,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule } from '@angular/material/sort';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
+import { MatSelect } from '@angular/material/select';
+import { MatOption } from '@angular/material/select';
 
 export const MATERIAL_PROVIDERS = importProvidersFrom(
   MatTableModule,
@@ -20,7 +25,10 @@ export const MATERIAL_PROVIDERS = importProvidersFrom(
   MatFormFieldModule,
   MatSortModule,
   MatChipsModule,
-  MatDialogModule
+  MatDialogModule,
+  MatDatepickerModule,
+  MatSlideToggleModule,
+  MatCardModule
 );
 
 export const MATERIAL_IMPORTS = [
@@ -32,5 +40,10 @@ export const MATERIAL_IMPORTS = [
   MatIconModule,
   MatFormFieldModule,
   MatChipsModule,
-  MatDialogModule
+  MatDialogModule,
+  MatDatepickerModule,
+  MatSlideToggleModule,
+  MatCardModule,
+  MatSelect,
+  MatOption
 ];

@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Add Time to {{ data.username }}</h2>
+
+<form #form="ngForm" (ngSubmit)="updateUser()">
+    <mat-dialog-content>
+        @if (data.availableSeconds | userTime:isActive(data.status):data.expiresAt:now; as time) {
+            <span class="time-pill">
+                {{ time.text }}
+            </span>
+        }
+
+        <mat-form-field appearance="outline">
+            <mat-label>Amount (KM)</mat-label>
+            <input matInput type="number" min="0" step="6" [formControl]="amount" (change)="updateSeconds()">
+        </mat-form-field>
+
+        @if (updateAmountTemp | userTime:false:null:now; as time) {
+            <span class="time-pill"> {{ time.text }} </span>
+        }
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>
+            Cancel
+        </button>
+        <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid">
+            Submit
+        </button>
+    </mat-dialog-actions>
+</form>

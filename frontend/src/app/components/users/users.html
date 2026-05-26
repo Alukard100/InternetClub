@@ -13,80 +13,79 @@
 </div>
 
 <div class="bottom-section">
-<div class="bottom-section mat-elevation-z2">
+  <div class="bottom-section mat-elevation-z2">
 
-  <table mat-table [dataSource]="dataSource">
+    <table mat-table [dataSource]="dataSource">
 
-    <!-- User -->
-    <ng-container matColumnDef="userId">
-      <th mat-header-cell *matHeaderCellDef>Username</th>
-      <td mat-cell *matCellDef="let user">
-        {{ user.username }}
-      </td>
-    </ng-container>
+      <!-- User -->
+      <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef>Username</th>
+        <td mat-cell *matCellDef="let user">
+          {{ user.username }}
+        </td>
+      </ng-container>
 
-    <!-- Total -->
-    <ng-container matColumnDef="total">
-      <th mat-header-cell *matHeaderCellDef>Total</th>
-      <td mat-cell *matCellDef="let user">
-        {{ user.totalMoneySpent }} KM
-      </td>
-    </ng-container>
+      <!-- Total -->
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Total</th>
+        <td mat-cell *matCellDef="let user">
+          {{ user.totalMoneySpent }} KM
+        </td>
+      </ng-container>
 
-    <!-- Status -->
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef class="right-cell">Status</th>
-      <td mat-cell *matCellDef="let user" class="right-cell">
-        <span class="status-pill">
-            <span class="status-dot" [class.active]="isActive(user.status)"></span>
-            {{ getStatusLabel(user.status) }}
-        </span>
-        
-      </td>
-    </ng-container>
+      <!-- Status -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef class="right-cell">Status</th>
+        <td mat-cell *matCellDef="let user" class="right-cell">
+          <span class="status-pill">
+              <span class="status-dot" [class.active]="isActive(user.status)"></span>
+              {{ getStatusLabel(user.status) }}
+          </span>
+          
+        </td>
+      </ng-container>
 
-    <!-- Time -->
-    <ng-container matColumnDef="time">
-      <th mat-header-cell *matHeaderCellDef class="right-cell">Time</th>
-      <td mat-cell *matCellDef="let user" class="right-cell">
-        
-        <ng-container>
+      <!-- Time -->
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef class="right-cell">Time</th>
+        <td mat-cell *matCellDef="let user" class="right-cell">
+          
+          <ng-container>
 
-        @if (user.availableMinutes | minutesToTime:isActive(user.status); as time) {
-            <span class="time-pill" [ngClass]="time.color">
-                {{ time.text }}
-            </span>
-        }
-            
+            @if (user.availableSeconds | userTime:isActive(user.status):user.expiresAt:now; as time) {
+                <span class="time-pill" [ngClass]="time.color">
+                    {{ time.text }}
+                </span>
+            }
+          </ng-container>
 
-        </ng-container>
+        </td>
+      </ng-container>
 
-      </td>
-    </ng-container>
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="actions-header">Actions</th>
+        <td mat-cell *matCellDef="let user" class="actions-cell">
+          <button #playpause mat-icon-button (click)="actionButtonStatus2(user)">
+            <mat-icon *ngIf="!user.status">pause</mat-icon>
+            <mat-icon *ngIf="user.status">play_arrow</mat-icon>
+          </button>
+          <button mat-icon-button (click)="openAddTimeDialog(user)">
+            <mat-icon>schedule</mat-icon>
+          </button>
+        </td>
+      </ng-container>
 
-    <!-- Actions -->
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef class="actions-header">Actions</th>
-      <td mat-cell *matCellDef="let user" class="actions-cell">
-        <button mat-icon-button>
-          <mat-icon>pause</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon>schedule</mat-icon>
-        </button>
-      </td>
-    </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+    <mat-paginator
+      [length]="totalCount"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[10, 20, 50]"
+      (page)="onPageChange($event)">
+    </mat-paginator>
 
-  <mat-paginator
-    [length]="totalCount"
-    [pageSize]="pageSize"
-    [pageSizeOptions]="[10, 20, 50]"
-    (page)="onPageChange($event)">
-  </mat-paginator>
-
-</div>
+  </div>
 </div>

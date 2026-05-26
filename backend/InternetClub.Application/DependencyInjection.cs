@@ -17,6 +17,10 @@ namespace InternetClub.Application
             services.AddScoped<IArticleService, ArticleService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
+            services.AddScoped<ITransactionService, TransactionService>();
+            services.AddScoped<IDashboardService, DashboardService>();
+            services.AddScoped<IJwtService, JwtService>();
+            services.AddScoped<IPayPalOrderService, PayPalOrderService>();
             
             return services;
         }

@@ -14,6 +14,7 @@ namespace InternetClub.Infrastructure.Persistence
 
         public DbSet<Article> Articles => Set<Article>();
         public DbSet<User> Users => Set<User>();
+        public DbSet<Transaction> Transactions => Set<Transaction>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +25,18 @@ namespace InternetClub.Infrastructure.Persistence
                 entity.Property(u => u.TotalMoneySpent)
                       .HasPrecision(18, 2);
             });
+
+            modelBuilder.Entity<Transaction>(entity =>
+            {
+                entity.HasOne(t => t.User)
+                    .WithMany()
+                    .HasForeignKey(t => t.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity.Property(t => t.Amount)
+                    .HasPrecision(18, 2);
+            });
+
         }
 
     }

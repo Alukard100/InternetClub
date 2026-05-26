@@ -1,1 +1,106 @@
-<p>transactions works!</p>
+<form [formGroup]="filterForm" class="top-section">
+
+    <mat-form-field appearance="outline" class="search-field">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput type="search" placeholder="Search" formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field class="select-field">
+        <mat-label>Transaction Type</mat-label>
+        <select matNativeControl formControlName="type">
+            <option value="2">Any</option>
+            <option value="0">Online</option>
+            <option value="1">Offline</option>
+        </select>
+    </mat-form-field>
+
+    <mat-form-field class="date-field">
+        <mat-label>Date range</mat-label>
+
+        <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate formControlName="startDate" placeholder="Start date">
+            <input matEndDate formControlName="endDate" placeholder="End date">
+        </mat-date-range-input>
+
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker (closed)="onDatePickerClosed()">
+            <mat-datepicker-actions>
+                
+                <div class="quick-actions">
+
+                    <div class="spacer"></div>
+
+                    <button mat-raised-button style="margin-left: 8px;" matDatepickerApply>Apply</button>
+
+                    <button mat-stroked-button (click)="setToday(picker)">Today</button>
+                    <button mat-stroked-button (click)="setThisWeek(picker)">This Week</button>
+                    <button mat-stroked-button (click)="setThisMonth(picker)">This Month</button>
+
+                </div>
+            </mat-datepicker-actions>
+            
+        </mat-date-range-picker>
+    </mat-form-field>
+
+    <button mat-icon-button (click)="clearFilters()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+</form>
+
+<div class="bottom-section mat-elevation-z2">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- User -->
+        <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef>Username</th>
+            <td mat-cell *matCellDef="let transaction">
+                {{ transaction.username }}
+            </td>
+        </ng-container>
+        
+        <!-- Amount -->
+        <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef>Amount</th>
+            <td mat-cell *matCellDef="let transaction">
+                {{ transaction.amount }}
+            </td>
+        </ng-container>
+
+        <!-- Currency -->
+        <ng-container matColumnDef="currency">
+            <th mat-header-cell *matHeaderCellDef>Currency</th>
+            <td mat-cell *matCellDef="let transaction">
+                {{ transaction.currency }}
+            </td>
+        </ng-container>
+
+        <!-- TransactionType -->
+        <ng-container matColumnDef="transactionType">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let transaction">
+                {{ TransactionType[transaction.transactionType] }}
+            </td>
+        </ng-container>
+
+        <!-- Date -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let transaction">
+                {{ transaction.date | date: 'dd-MM-yyyy' }}
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    </table>
+
+    <mat-paginator
+        [length]="totalCount"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[10, 20, 50]"
+        (page)="onPageChange($event)">
+    </mat-paginator>
+
+</div>

@@ -1,1 +1,57 @@
-<p>dashboard works!</p>
+<div class="upper-section">
+    <div class="card">
+        <mat-icon>person</mat-icon>
+        <div>
+            <h3>{{ dashboardData?.userCount }}</h3>
+            <span>Number of Users</span>
+        </div>
+    </div>
+    <div class="card">
+        <mat-icon>shopping_cart</mat-icon>
+        <div>
+            <h3>{{ dashboardData?.totalTransactions }}</h3>
+            <span>Total Transactions</span>
+        </div>
+    </div>
+    <div class="card">
+        <mat-icon>monetization_on</mat-icon>
+        <div>
+            <h3>{{ dashboardData?.monthlyEarnings }}KM</h3>
+            <span>Monthly Earnings</span>
+        </div>
+    </div>
+    <div class="card">
+        <mat-icon>article</mat-icon>
+        <div>
+            <h3>{{ dashboardData?.articleCount }}</h3>
+            <span>Number of Articles</span>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-section">
+    <div class="chart-large">
+        <div class="chart-header">
+            <button mat-button [class.active-btn]="selectMode === 'earnings'" (click)="selectMode='earnings'; updateBarChart()">
+            Earnings
+            </button>
+            <button mat-button [class.active-btn]="selectMode === 'transactions'" (click)="selectMode='transactions'; updateBarChart()">
+            Transactions
+            </button>
+        </div>
+
+        <canvas baseChart
+                [data]="barChartData"
+                [type]="barChartType">
+        </canvas>
+    </div>
+
+    <div class="chart-small">
+        <h3>Payment Methods</h3>
+
+        <canvas baseChart
+                [data]="doughnutChartData"
+                [type]="doughnutChartType">
+        </canvas>
+    </div>
+</div>

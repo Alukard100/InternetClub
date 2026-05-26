@@ -38,6 +38,13 @@ namespace InternetClub.Infrastructure.Migrations
                     b.Property<DateTime?>("EditedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("Published")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ThumbnailPath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -54,13 +61,43 @@ namespace InternetClub.Infrastructure.Migrations
                     b.ToTable("Articles");
                 });
 
+            modelBuilder.Entity("InternetClub.Domain.Entities.Transaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("Date")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<int>("TransactionType")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Transactions");
+                });
+
             modelBuilder.Entity("InternetClub.Domain.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AvailableMinutes")
+                    b.Property<int>("AvailableSeconds")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -68,6 +105,9 @@ namespace InternetClub.Infrastructure.Migrations
 
                     b.Property<DateTime?>("EditedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<DateTimeOffset?>("ExpiresAt")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
@@ -90,6 +130,17 @@ namespace InternetClub.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("InternetClub.Domain.Entities.Transaction", b =>
+                {
+                    b.HasOne("InternetClub.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
